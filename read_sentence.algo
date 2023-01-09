@@ -1,0 +1,24 @@
+ALGORITHM read_sentence
+VAR
+  counterOne := INTEGER
+  counterSecond := INTEGER
+  counterThird := INTEGER
+
+  sentc:= STRING
+
+BEGIN
+  counterOne:= 0
+  counterSecond:= 1
+  counterThird:= 0
+  Write ("I love coding.")
+  Read(sentc)
+  REPEAT
+    IF (sentc[counterOne]="") THEN
+      counterSecond:= counterSecond+1
+    END_IF
+    IF (sentc[counterOne] in ["a", "e", "u", "i", "o", "y"]) THEN
+      counterThird:= counterThird+1
+    END_IF
+    counterOne:= counterOne+1
+    UNTIL (sentc[counterOne]="")
+END
